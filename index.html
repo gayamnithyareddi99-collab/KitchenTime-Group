@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KitchenTime Group | London's Premier Hospitality & Bar Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   RESET & ROOT   KitchenTime Group warm amber/charcoal palette
+============================================================ */
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+:root{
+  --amber:#E8922A;
+  --amber-dim:#C97A1E;
+  --amber-dark:#9A5E12;
+  --deep:#120C04;
+  --deep-mid:#1E140A;
+  --red:#C0392B;
+  --red-dark:#962D22;
+  --white:#FFFFFF;
+  --off-white:#FDF5E6;
+  --text-dark:#1A0F05;
+  --text-muted:#6B4A2A;
+  --card-bg:rgba(232,146,42,0.04);
+  --card-border:rgba(232,146,42,0.18);
+}
+
+html{font-family:'Source Sans 3',sans-serif;}
+
+::-webkit-scrollbar{width:6px;}
+::-webkit-scrollbar-track{background:#120C04;}
+::-webkit-scrollbar-thumb{background:#E8922A;border-radius:3px;}
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar{
+  width:100%;background:rgba(18,12,4,0.97);
+  padding:14px 8%;position:fixed;top:0;left:0;
+  z-index:1000;border-bottom:1px solid rgba(232,146,42,0.18);
+  backdrop-filter:blur(12px);
+}
+.nav-container{
+  max-width:1200px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.logo{
+  font-family:'Playfair Display',serif;font-size:22px;font-weight:700;
+  color:var(--amber);letter-spacing:1px;
+  display:flex;align-items:center;gap:10px;text-decoration:none;
+}
+.logo-icon{
+  width:36px;height:36px;
+  background:linear-gradient(135deg,var(--amber),var(--amber-dark));
+  border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-icon svg{width:22px;height:22px;}
+.logo span{color:var(--white);font-weight:400;}
+
+#navMenu{display:flex;gap:32px;align-items:center;}
+#navMenu a{
+  text-decoration:none;color:rgba(232,146,42,0.8);
+  font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  position:relative;transition:color 0.3s;font-family:'IBM Plex Mono',monospace;
+}
+#navMenu a::after{
+  content:"";position:absolute;left:0;bottom:-4px;
+  width:0;height:1px;background:var(--amber);transition:0.3s;
+}
+#navMenu a:hover{color:var(--amber);}
+#navMenu a:hover::after{width:100%;}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.menu-toggle span{width:24px;height:2px;background:var(--amber);display:block;transition:0.3s;}
+
+@media(max-width:900px){
+  #navMenu{
+    position:absolute;top:64px;left:0;width:100%;
+    background:rgba(18,12,4,0.98);flex-direction:column;padding:28px 0;gap:20px;display:none;
+    border-bottom:1px solid rgba(232,146,42,0.18);
+  }
+  #navMenu.active{display:flex;}
+  .menu-toggle{display:flex;}
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero-section{
+  position:relative;padding:150px 8% 100px;background:var(--deep);
+  overflow:hidden;min-height:100vh;display:flex;align-items:center;
+}
+.hero-section::before{
+  content:"";position:absolute;top:0;right:0;width:280px;height:280px;
+  background:var(--amber);opacity:0.07;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.hero-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:300px;height:300px;
+  background:var(--red);opacity:0.06;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.hero-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(232,146,42,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(232,146,42,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(232,146,42,0.04) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;
+}
+.hero-container{
+  max-width:1200px;margin:auto;
+  display:grid;grid-template-columns:1.1fr 0.9fr;
+  gap:70px;align-items:center;position:relative;z-index:2;width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,146,42,0.08);border:1px solid rgba(232,146,42,0.3);
+  color:var(--amber);font-size:11px;font-weight:700;letter-spacing:3px;
+  padding:6px 16px;border-radius:3px;text-transform:uppercase;
+  margin-bottom:20px;font-family:'IBM Plex Mono',monospace;
+}
+.hero-badge::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--amber);
+  animation:pulse-dot 1.5s ease-in-out infinite;
+}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.6);}}
+.hero-left h1{
+  font-family:'Playfair Display',serif;font-size:54px;line-height:1.12;
+  color:var(--amber);margin-bottom:8px;letter-spacing:1px;
+}
+.hero-left h1 span{color:var(--white);}
+.hero-divider{
+  width:70px;height:2px;background:linear-gradient(90deg,var(--amber),transparent);
+  margin:18px 0 24px;
+}
+.hero-text{color:#C4966A;font-size:17px;line-height:1.85;margin-bottom:35px;max-width:520px;}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-amber{
+  background:linear-gradient(135deg,var(--amber),var(--amber-dark));
+  color:var(--deep);padding:14px 32px;border-radius:4px;
+  text-decoration:none;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  transition:0.3s;box-shadow:0 4px 20px rgba(232,146,42,0.25);font-family:'IBM Plex Mono',monospace;
+}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,146,42,0.4);}
+.btn-outline-amber{
+  border:1px solid var(--amber);color:var(--amber);padding:14px 32px;border-radius:4px;
+  text-decoration:none;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  transition:0.3s;font-family:'IBM Plex Mono',monospace;
+}
+.btn-outline-amber:hover{background:rgba(232,146,42,0.08);}
+.hero-right{position:relative;}
+.hero-card{
+  background:rgba(232,146,42,0.04);border:1px solid rgba(232,146,42,0.18);
+  border-radius:12px;padding:35px;backdrop-filter:blur(8px);position:relative;overflow:hidden;
+}
+.hero-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,var(--amber),var(--red));
+}
+.hero-card-title{
+  font-family:'IBM Plex Mono',monospace;color:var(--amber);
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;
+}
+.hero-stat{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 0;border-bottom:1px solid rgba(232,146,42,0.08);
+}
+.hero-stat:last-child{border-bottom:none;}
+.stat-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.stat-dot.red{background:var(--red);}
+.stat-label{color:#C4966A;font-size:14px;flex:1;}
+.stat-val{color:var(--amber);font-weight:700;font-size:16px;font-family:'Playfair Display',serif;letter-spacing:1px;}
+
+@media(max-width:900px){
+  .hero-section{padding:120px 6% 80px;min-height:auto;}
+  .hero-container{grid-template-columns:1fr;gap:50px;text-align:center;}
+  .hero-left h1{font-size:32px;}
+  .hero-divider{margin:16px auto 22px;}
+  .hero-text{font-size:15px;margin:0 auto 28px;max-width:95%;}
+  .hero-buttons{justify-content:center;}
+  .btn-amber,.btn-outline-amber{padding:13px 24px;font-size:12px;}
+}
+
+/* ============================================================
+   ABOUT
+============================================================ */
+.about-section{padding:130px 8%;background:var(--deep-mid);position:relative;overflow:hidden;}
+.about-section::before{
+  content:"";position:absolute;top:0;right:0;width:250px;height:250px;
+  background:var(--red);opacity:0.05;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.about-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:250px;height:250px;
+  background:var(--amber);opacity:0.04;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.about-container{
+  max-width:1100px;margin:auto;display:grid;grid-template-columns:1.3fr 1fr;
+  gap:80px;align-items:center;position:relative;z-index:2;
+}
+.section-label{
+  display:inline-block;color:var(--amber);font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;margin-bottom:14px;font-family:'IBM Plex Mono',monospace;
+}
+.section-title{
+  font-family:'Playfair Display',serif;font-size:40px;color:var(--amber);
+  line-height:1.2;margin-bottom:8px;letter-spacing:1px;
+}
+.section-divider{
+  width:70px;height:2px;background:linear-gradient(90deg,var(--amber),transparent);margin:14px 0 26px;
+}
+.about-left p{color:#C4966A;line-height:1.85;margin-bottom:20px;font-size:16px;max-width:520px;}
+.about-features{margin-top:28px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.feature-tag{
+  background:rgba(232,146,42,0.06);border:1px solid rgba(232,146,42,0.18);
+  color:rgba(232,146,42,0.9);padding:10px 16px;border-radius:5px;
+  font-size:12px;font-weight:700;letter-spacing:0.5px;font-family:'IBM Plex Mono',monospace;
+}
+.founder-box{
+  background:rgba(232,146,42,0.04);border:1px solid rgba(232,146,42,0.18);
+  padding:38px;border-radius:12px;position:relative;
+}
+.founder-box::before{
+  content:'"';position:absolute;top:-20px;left:28px;
+  font-size:80px;color:var(--amber);opacity:0.12;font-family:'Playfair Display',serif;line-height:1;
+}
+.founder-box::after{
+  content:"";position:absolute;top:0;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,var(--amber),transparent);border-radius:12px 12px 0 0;
+}
+.founder-img{
+  width:80px;height:80px;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(232,146,42,0.4);margin-bottom:16px;display:block;
+}
+.founder-box-title{
+  font-family:'Playfair Display',serif;color:var(--amber);
+  font-size:13px;letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;
+}
+.founder-box-div{width:50px;height:2px;background:var(--amber);margin-bottom:18px;}
+.founder-box p{color:#C4966A;line-height:1.8;margin-bottom:16px;font-size:15px;}
+.founder-box p strong{color:rgba(232,146,42,0.9);}
+.linkedin-btn{
+  display:inline-block;padding:10px 22px;background:var(--amber);color:var(--deep);
+  text-decoration:none;border-radius:4px;font-weight:700;font-size:12px;
+  letter-spacing:1px;text-transform:uppercase;margin-top:4px;transition:0.3s;
+  font-family:'IBM Plex Mono',monospace;
+}
+.linkedin-btn:hover{background:#F4A83A;}
+
+@media(max-width:900px){
+  .about-section{padding:90px 6%;}
+  .about-container{grid-template-columns:1fr;gap:50px;text-align:center;}
+  .section-divider{margin:14px auto 24px;}
+  .about-left p{margin:0 auto 18px;max-width:95%;}
+  .about-features{grid-template-columns:1fr;max-width:300px;margin:20px auto 0;}
+  .feature-tag{text-align:center;}
+  .founder-box{text-align:center;}
+  .founder-box-div{margin:8px auto 18px;}
+  .founder-img{margin:0 auto 16px;}
+}
+
+/* ============================================================
+   PROCESS
+============================================================ */
+.process-section{padding:130px 8%;background:var(--off-white);position:relative;overflow:hidden;}
+.process-section::before{
+  content:"";position:absolute;top:0;right:0;width:250px;height:250px;
+  background:var(--amber);opacity:0.07;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.process-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:260px;height:260px;
+  background:var(--deep);opacity:0.07;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.process-container{max-width:1200px;margin:auto;text-align:center;position:relative;z-index:2;}
+.process-container .section-title{color:var(--text-dark);}
+.process-container .section-label{color:var(--red);}
+.process-container .section-divider{margin:14px auto 26px;background:linear-gradient(90deg,var(--amber-dim),transparent);}
+.process-sub{max-width:660px;margin:0 auto 60px;color:#6B4A2A;line-height:1.8;font-size:16px;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+.process-card{
+  background:var(--white);padding:28px 22px;border-radius:10px;
+  border:1px solid #E8D5BC;border-top:4px solid var(--amber);
+  text-align:left;transition:0.35s;box-shadow:0 4px 20px rgba(0,0,0,0.04);
+}
+.process-card:hover{
+  transform:translateY(-8px);box-shadow:0 20px 40px rgba(232,146,42,0.12);border-top-color:var(--red);
+}
+.process-card-img{
+  width:100%;height:140px;object-fit:cover;background:var(--deep);
+  border-radius:7px;margin-bottom:16px;display:block;
+}
+.step-badge{
+  display:inline-block;background:var(--amber);color:var(--deep);
+  font-size:11px;font-weight:700;padding:5px 14px;border-radius:3px;
+  letter-spacing:1px;margin-bottom:12px;font-family:'IBM Plex Mono',monospace;
+}
+.process-card h3{
+  font-family:'Playfair Display',serif;margin-bottom:10px;
+  color:var(--text-dark);font-size:18px;letter-spacing:0.5px;
+}
+.process-card p{color:#6B4A2A;font-size:14px;line-height:1.65;}
+
+@media(max-width:1000px){.process-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){
+  .process-section{padding:80px 6%;}
+  .process-container .section-title{font-size:26px;}
+  .process-sub{font-size:14px;margin-bottom:40px;}
+  .process-grid{grid-template-columns:1fr;}
+}
+
+/* ============================================================
+   PLATFORM / SERVICES
+============================================================ */
+.platform-section{padding:130px 8%;background:var(--deep);position:relative;overflow:hidden;}
+.platform-section::before{
+  content:"";position:absolute;top:0;right:0;width:250px;height:250px;
+  background:var(--amber);opacity:0.06;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.platform-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:260px;height:260px;
+  background:var(--red);opacity:0.05;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.platform-container{max-width:1200px;margin:auto;text-align:center;position:relative;z-index:2;}
+.platform-container .section-title{color:var(--amber);}
+.platform-container .section-label{color:var(--red);}
+.platform-container .section-divider{margin:14px auto 26px;background:linear-gradient(90deg,var(--amber),transparent);}
+.platform-sub{max-width:660px;margin:0 auto 60px;color:#C4966A;line-height:1.8;font-size:16px;}
+.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.platform-card{
+  background:var(--card-bg);border:1px solid var(--card-border);
+  padding:30px 25px;border-radius:10px;text-align:left;transition:0.35s;position:relative;overflow:hidden;
+}
+.platform-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;
+  height:2px;background:linear-gradient(90deg,var(--amber),var(--red));
+  transform:scaleX(0);transform-origin:left;transition:0.4s;
+}
+.platform-card:hover{
+  transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border-color:rgba(232,146,42,0.35);
+}
+.platform-card:hover::before{transform:scaleX(1);}
+.platform-card-img{
+  width:100%;height:160px;object-fit:cover;border-radius:7px;margin-bottom:18px;display:block;
+}
+.element-badge{
+  display:inline-block;background:rgba(232,146,42,0.12);border:1px solid rgba(232,146,42,0.3);
+  color:var(--amber);font-size:10px;font-weight:700;padding:4px 12px;border-radius:3px;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-family:'IBM Plex Mono',monospace;
+}
+.platform-card h3{
+  font-family:'Playfair Display',serif;color:rgba(232,146,42,0.95);
+  font-size:18px;margin-bottom:10px;letter-spacing:0.3px;
+}
+.platform-card p.short-text{color:#C4966A;font-size:14px;line-height:1.65;margin-bottom:14px;}
+.platform-card p.more-text{color:#9A7050;font-size:13px;line-height:1.7;display:none;margin-bottom:14px;}
+.platform-card.open p.more-text{display:block;}
+.learn-btn{
+  background:transparent;border:1px solid rgba(232,146,42,0.3);
+  color:var(--amber);padding:8px 16px;border-radius:3px;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;transition:0.3s;font-family:'IBM Plex Mono',monospace;
+}
+.learn-btn:hover{background:rgba(232,146,42,0.1);}
+
+@media(max-width:1000px){.platform-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){
+  .platform-section{padding:80px 6%;}
+  .platform-grid{grid-template-columns:1fr;}
+  .platform-container .section-title{font-size:26px;}
+}
+
+/* ============================================================
+   MARKET STRIP
+============================================================ */
+.market-strip{padding:60px 8%;background:linear-gradient(135deg,var(--amber-dark),var(--amber-dim));}
+.stats-grid{
+  max-width:1100px;margin:auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:30px;
+}
+.stat-item{text-align:center;}
+.stat-num{
+  display:block;font-family:'Playfair Display',serif;font-size:40px;font-weight:700;
+  color:var(--white);margin-bottom:8px;letter-spacing:1px;
+}
+.stat-desc{color:rgba(255,255,255,0.75);font-size:13px;line-height:1.6;}
+
+@media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.stats-grid{grid-template-columns:1fr;}.stat-num{font-size:32px;}}
+
+/* ============================================================
+   PRICING
+============================================================ */
+.pricing-section{padding:130px 8%;background:var(--off-white);position:relative;overflow:hidden;}
+.pricing-section::before{
+  content:"";position:absolute;top:0;right:0;width:240px;height:240px;
+  background:var(--amber);opacity:0.07;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.pricing-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:250px;height:250px;
+  background:var(--deep);opacity:0.07;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.pricing-container{max-width:1100px;margin:auto;text-align:center;position:relative;z-index:2;}
+.pricing-container .section-title{color:var(--text-dark);}
+.pricing-container .section-label{color:var(--red);}
+.pricing-container .section-divider{margin:14px auto 26px;background:linear-gradient(90deg,var(--amber-dim),transparent);}
+.pricing-sub{max-width:640px;margin:0 auto 60px;color:#6B4A2A;line-height:1.8;font-size:16px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;}
+.price-card{
+  background:var(--white);border:1px solid #E8D5BC;border-radius:12px;
+  padding:36px 30px;text-align:left;transition:0.35s;
+  box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+.price-card.featured{
+  background:var(--deep);border:1px solid rgba(232,146,42,0.3);
+  box-shadow:0 8px 40px rgba(232,146,42,0.2);transform:scale(1.04);
+}
+.price-card:hover{box-shadow:0 16px 40px rgba(232,146,42,0.15);}
+.price-tag{
+  display:inline-block;background:rgba(232,146,42,0.1);
+  color:var(--amber-dim);border:1px solid rgba(232,146,42,0.25);
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:4px 12px;border-radius:3px;margin-bottom:16px;
+  font-family:'IBM Plex Mono',monospace;
+}
+.price-card.featured .price-tag{background:rgba(232,146,42,0.15);}
+.price-card h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:6px;color:var(--text-dark);letter-spacing:0.5px;}
+.price-card.featured h3{color:var(--amber);}
+.price-card > p{color:#7A6050;font-size:14px;margin-bottom:4px;}
+.price-card.featured > p{color:#C4966A;}
+.price-amount{
+  font-family:'Playfair Display',serif;font-size:34px;font-weight:700;
+  color:var(--amber-dim);margin:16px 0 6px;display:block;
+}
+.price-card.featured .price-amount{color:var(--amber);}
+.price-unit{color:#888;font-size:13px;margin-bottom:22px;}
+.price-card.featured .price-unit{color:#C4966A;}
+.price-features{list-style:none;margin-bottom:28px;}
+.price-features li{
+  padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.06);
+  color:#6B4A2A;font-size:14px;display:flex;gap:10px;align-items:flex-start;
+}
+.price-card.featured .price-features li{border-bottom-color:rgba(255,255,255,0.07);color:#C4966A;}
+.price-features li:last-child{border-bottom:none;}
+.check{color:var(--amber);font-weight:700;flex-shrink:0;}
+.price-btn{
+  display:block;text-align:center;padding:13px;border-radius:5px;
+  text-decoration:none;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  transition:0.3s;font-family:'IBM Plex Mono',monospace;
+}
+.price-btn-outline{border:1px solid var(--deep);color:var(--deep);}
+.price-btn-outline:hover{background:var(--deep);color:var(--white);}
+.price-btn-amber{background:linear-gradient(135deg,var(--amber),var(--amber-dark));color:var(--deep);}
+.price-btn-amber:hover{filter:brightness(1.1);}
+
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr;}.price-card.featured{transform:scale(1);}}
+@media(max-width:600px){.pricing-section{padding:80px 6%;}.pricing-container .section-title{font-size:26px;}}
+
+/* ============================================================
+   FAQ
+============================================================ */
+.faq-section{padding:130px 8%;background:var(--deep);position:relative;overflow:hidden;}
+.faq-section::before{
+  content:"";position:absolute;top:0;right:0;width:240px;height:240px;
+  background:var(--amber);opacity:0.06;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.faq-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:250px;height:250px;
+  background:var(--red);opacity:0.05;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.faq-container{max-width:800px;margin:auto;position:relative;z-index:2;}
+.faq-header{text-align:center;margin-bottom:50px;}
+.faq-header .section-title{color:var(--amber);}
+.faq-header .section-label{color:var(--red);}
+.faq-header .section-divider{margin:14px auto 20px;}
+.faq-item{border-bottom:1px solid rgba(232,146,42,0.12);padding:20px 0;}
+.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:20px;}
+.faq-question h4{
+  font-family:'Playfair Display',serif;color:rgba(232,146,42,0.9);
+  font-size:17px;font-weight:600;letter-spacing:0.3px;
+}
+.faq-icon{color:var(--amber);font-size:20px;font-weight:300;flex-shrink:0;transition:0.3s;font-family:'IBM Plex Mono',monospace;}
+.faq-answer{display:none;color:#9A7050;font-size:15px;line-height:1.75;padding-top:14px;}
+.faq-item.open .faq-answer{display:block;}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--red);}
+
+@media(max-width:600px){.faq-section{padding:80px 6%;}.faq-question h4{font-size:15px;}}
+
+/* ============================================================
+   CONTACT
+============================================================ */
+.contact-section{padding:130px 8%;background:var(--deep-mid);position:relative;overflow:hidden;}
+.contact-section::before{
+  content:"";position:absolute;top:0;right:0;width:240px;height:240px;
+  background:var(--amber);opacity:0.06;clip-path:polygon(100% 0,0 0,100% 100%);
+}
+.contact-section::after{
+  content:"";position:absolute;bottom:0;left:0;width:250px;height:250px;
+  background:var(--red);opacity:0.06;clip-path:polygon(0 100%,0 0,100% 100%);
+}
+.contact-container{
+  max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;
+  gap:70px;align-items:start;position:relative;z-index:2;
+}
+.contact-left .section-title{color:var(--amber);}
+.contact-left .section-label{color:var(--red);}
+.contact-left .section-divider{background:linear-gradient(90deg,var(--amber),transparent);}
+.contact-left p{color:#C4966A;line-height:1.8;font-size:16px;margin-bottom:30px;}
+.contact-info-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;}
+.contact-icon{
+  width:38px;height:38px;background:rgba(232,146,42,0.08);border:1px solid rgba(232,146,42,0.18);
+  border-radius:5px;display:flex;align-items:center;justify-content:center;
+  color:var(--amber);font-size:16px;flex-shrink:0;
+}
+.contact-info-text strong{color:rgba(232,146,42,0.9);font-size:13px;display:block;margin-bottom:3px;}
+.contact-info-text span{color:#9A7050;font-size:14px;}
+.contact-form{display:flex;flex-direction:column;gap:16px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-group label{color:var(--amber);font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;}
+.form-group input,.form-group select,.form-group textarea{
+  background:rgba(232,146,42,0.04);border:1px solid rgba(232,146,42,0.18);
+  color:var(--white);padding:12px 16px;border-radius:5px;font-size:14px;
+  font-family:'Source Sans 3',sans-serif;outline:none;transition:0.3s;
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#7A6050;}
+.form-group select option{background:#1E140A;color:var(--white);}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{
+  border-color:var(--amber);background:rgba(232,146,42,0.07);
+}
+.form-group textarea{min-height:120px;resize:vertical;}
+.form-submit{
+  background:linear-gradient(135deg,var(--amber),var(--amber-dark));
+  color:var(--deep);border:none;padding:14px 28px;border-radius:5px;
+  font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+  cursor:pointer;transition:0.3s;font-family:'IBM Plex Mono',monospace;
+}
+.form-submit:hover{filter:brightness(1.15);transform:translateY(-2px);}
+
+@media(max-width:900px){.contact-section{padding:90px 6%;}.contact-container{grid-template-columns:1fr;gap:50px;}}
+@media(max-width:600px){.contact-section{padding:80px 6%;}.contact-left .section-title{font-size:26px;}}
+
+/* ============================================================
+   FOOTER
+============================================================ */
+.footer{background:#0A0602;padding:70px 8% 30px;border-top:1px solid rgba(232,146,42,0.12);}
+.footer-grid{
+  max-width:1100px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:50px;margin-bottom:50px;
+}
+.footer-brand .logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.footer-brand .logo-icon-sm{
+  width:32px;height:32px;background:linear-gradient(135deg,var(--amber),var(--amber-dark));
+  border-radius:7px;display:flex;align-items:center;justify-content:center;
+}
+.footer-brand .logo-icon-sm svg{width:18px;height:18px;}
+.footer-brand .logo-text{
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  color:var(--amber);letter-spacing:1px;
+}
+.footer-brand .logo-text span{color:var(--white);font-weight:400;}
+.footer-brand p{color:#5A3A1A;font-size:14px;line-height:1.8;max-width:340px;}
+.footer-col h4{
+  font-family:'Playfair Display',serif;color:var(--amber);
+  font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px;
+}
+.footer-col a{display:block;color:#5A3A1A;font-size:14px;text-decoration:none;margin-bottom:10px;transition:color 0.3s;}
+.footer-col a:hover{color:var(--amber);}
+.footer-bottom{
+  max-width:1100px;margin:auto;padding-top:28px;
+  border-top:1px solid rgba(232,146,42,0.08);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{color:#3A2010;font-size:13px;}
+.footer-bottom p span{color:var(--amber);}
+
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:35px;}
+  .footer-brand{grid-column:span 2;}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-brand{grid-column:auto;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">
+      <div class="logo-icon">
+        <!-- Chef / kitchen icon -->
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 3C9.5 3 7.5 4.8 7.5 7C7.5 8.3 8.1 9.4 9 10.1V11H15V10.1C15.9 9.4 16.5 8.3 16.5 7C16.5 4.8 14.5 3 12 3Z" fill="#120C04"/>
+          <rect x="9" y="11" width="6" height="9" rx="1" fill="#120C04"/>
+          <path d="M6 14H18" stroke="#120C04" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      KitchenTime<span> Group</span>
+    </a>
+    <div id="navMenu">
+      <a href="#about">About</a>
+      <a href="#how-it-works">How We Work</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero-section" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-container">
+    <div class="hero-left">
+      <div class="hero-badge">Award-Winning · London Hospitality Excellence</div>
+      <h1>London's <span>Premier</span><br>Hospitality &amp; <span>Bar</span><br>Management Group</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-text">
+        KitchenTime Group delivers world-class bar management, bespoke cocktail design, and full-service hospitality staffing across Central London  crafting unforgettable guest experiences that drive revenue, loyalty, and repeat business for restaurants, hotels, and events.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-amber">Book a Consultation →</a>
+        <a href="#services" class="btn-outline-amber">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-title">// Our Performance Standards</div>
+        <div class="hero-stat">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Years of Bartending Experience</span>
+          <span class="stat-val">5+ Yrs</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Venues Served Across London</span>
+          <span class="stat-val">3+</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Cocktail Recipes in Portfolio</span>
+          <span class="stat-val">50+</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dot"></div>
+          <span class="stat-label">Customer Satisfaction Rating</span>
+          <span class="stat-val">★ 4.9</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dot red"></div>
+          <span class="stat-label">Active Events Hosted Monthly</span>
+          <span class="stat-val" style="color:var(--red)">20+</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dot red"></div>
+          <span class="stat-label">Upsell Revenue Increase</span>
+          <span class="stat-val" style="color:var(--red)">+35%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about-section" id="about">
+  <div class="about-container">
+    <div class="about-left">
+      <div class="section-label">About KitchenTime Group</div>
+      <h2 class="section-title">Elevating Every Guest<br>Experience</h2>
+      <div class="section-divider"></div>
+      <p>
+        KitchenTime Group was founded on a simple belief: exceptional hospitality transforms a meal into a memory. We provide comprehensive bar management, cocktail design, and front-of-house staffing solutions to London's finest restaurants, hotels, and private event venues.
+      </p>
+      <p>
+        From daily bar operations and menu creation to key-holder responsibilities and stock management, our team brings <strong style="color:rgba(232,146,42,0.9)">precision, creativity, and professionalism</strong> to every shift  ensuring your venue delivers consistently outstanding service.
+      </p>
+      <p>
+        Fully compliant with UK alcohol licensing law, food hygiene standards, and health &amp; safety regulations  we protect your business while delighting your guests with expertly crafted beverages and attentive, personalised service every time.
+      </p>
+      <div class="about-features">
+        <div class="feature-tag">Alcohol Law Compliant</div>
+        <div class="feature-tag">Health &amp; Safety Certified</div>
+        <div class="feature-tag">Cocktail List Design</div>
+        <div class="feature-tag">Key Holder Trusted</div>
+        <div class="feature-tag">FOH Operations Expert</div>
+        <div class="feature-tag">Revenue Upsell Driven</div>
+      </div>
+    </div>
+    <div class="founder-box">
+    
+      <div class="founder-box-title">Head Bartender &amp; Founder</div>
+      <div class="founder-box-div"></div>
+      <p>
+        <strong>Vinith Aiereddy</strong> brings over five years of front-line hospitality experience across London's most vibrant venues  from Greenwich to Central London.
+      </p>
+      <p>
+        Holding a <strong>Bachelor of Computer Science</strong> and a <strong>Master of International Business Management</strong> from the University of East London, Vinith blends analytical thinking with creative flair to drive bar performance and guest satisfaction.
+      </p>
+      <p>
+        His expertise spans cocktail design, inventory management, event hosting, and responsible alcohol service  delivering memorable experiences that keep guests coming back.
+      </p>
+      <a href="#contact" class="linkedin-btn">Contact Vinith →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process-section" id="how-it-works">
+  <div class="process-container">
+    <div class="section-label">How We Work</div>
+    <h2 class="section-title">From Consultation to Unforgettable Service</h2>
+    <div class="section-divider"></div>
+    <p class="process-sub">
+      Every KitchenTime Group engagement follows a proven four-stage process  ensuring your venue receives precisely tailored bar solutions that boost revenue, satisfy guests, and maintain flawless compliance.
+    </p>
+    <div class="process-grid">
+
+      <div class="process-card">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80&auto=format&fit=crop" class="process-card-img" alt="Venue Consultation">
+        <div class="step-badge">STEP 01</div>
+        <h3>Venue Consultation</h3>
+        <p>We begin with a thorough assessment of your venue, guest demographics, and revenue goals  identifying opportunities to elevate your bar experience and align our services to your vision.</p>
+      </div>
+
+      <div class="process-card">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400&q=80&auto=format&fit=crop" class="process-card-img" alt="Menu & Cocktail Design">
+        <div class="step-badge">STEP 02</div>
+        <h3>Menu &amp; Cocktail Design</h3>
+        <p>Our bartenders craft a bespoke drinks menu  featuring signature cocktails, seasonal specials, and curated wine and spirits selections  designed to increase average order value and delight guests.</p>
+      </div>
+
+      <div class="process-card">
+        <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=400&q=80&auto=format&fit=crop" class="process-card-img" alt="Operations Setup">
+        <div class="step-badge">STEP 03</div>
+        <h3>Bar Operations Setup</h3>
+        <p>We implement daily bar operations protocols  from opening and closing routines to stock management, equipment maintenance, and kitchen coordination  ensuring seamless, vibrant service throughout every shift.</p>
+      </div>
+
+      <div class="process-card">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&q=80&auto=format&fit=crop" class="process-card-img" alt="Events & Promotions">
+        <div class="step-badge">STEP 04</div>
+        <h3>Events &amp; Ongoing Loyalty</h3>
+        <p>We organise and host special events, promotions, and themed evenings to attract new guests  while building lasting relationships with regulars through personalised service that drives repeat business.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="platform-section" id="services">
+  <div class="platform-container">
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">Six Signature Hospitality Services</h2>
+    <div class="section-divider"></div>
+    <p class="platform-sub">
+      KitchenTime Group offers a comprehensive suite of hospitality and bar management services  each precision-crafted to transform your venue into a thriving, guest-loved destination.
+    </p>
+    <div class="platform-grid">
+
+      <div class="platform-card" id="card-a">
+        <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Bar Management">
+        <div class="element-badge">Service A</div>
+        <h3>Full Bar Management</h3>
+        <p class="short-text">End-to-end daily bar operations  creating a vibrant atmosphere for hotel guests and local community alike.</p>
+        <p class="more-text">We oversee every aspect of bar operations: opening and closing procedures, key-holder responsibilities, stock replenishment, equipment maintenance, and compliance with health and safety regulations. Our managers coordinate seamlessly with kitchen staff and F&amp;B managers to minimise service delays and maximise guest satisfaction across every service period.</p>
+        <button class="learn-btn" onclick="toggleCard('card-a',this)">Learn More</button>
+      </div>
+
+      <div class="platform-card" id="card-b">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Cocktail Design">
+        <div class="element-badge">Service B</div>
+        <h3>Cocktail List Development</h3>
+        <p class="short-text">Bespoke signature cocktail menus crafted to increase revenue and guest loyalty.</p>
+        <p class="more-text">Our mixologists design custom cocktail menus featuring original signature drinks, seasonal specials, and expertly curated spirit, wine, and beer selections. Every menu is built around your brand identity and target guest profile  engineered to increase upsell opportunities, raise average spend, and create the "wow" moments guests remember and return for.</p>
+        <button class="learn-btn" onclick="toggleCard('card-b',this)">Learn More</button>
+      </div>
+
+      <div class="platform-card" id="card-c">
+        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Event Hosting">
+        <div class="element-badge">Service C</div>
+        <h3>Event Hosting &amp; Promotions</h3>
+        <p class="short-text">Organised special events and themed promotions that attract new guests and energise your venue.</p>
+        <p class="more-text">From cocktail masterclasses and themed evenings to corporate hospitality and private hire management, our events team plan and execute memorable experiences that fill seats and generate buzz. We handle logistics, bar staffing, menu pairing, and on-the-night coordination  so you can focus on welcoming your guests while we handle the details.</p>
+        <button class="learn-btn" onclick="toggleCard('card-c',this)">Learn More</button>
+      </div>
+
+      <div class="platform-card" id="card-d">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Inventory Management">
+        <div class="element-badge">Service D</div>
+        <h3>Inventory &amp; Stock Control</h3>
+        <p class="short-text">Precise daily stock management and supplier coordination to eliminate waste and protect margins.</p>
+        <p class="more-text">Our team implements rigorous daily stock-taking routines, supplier ordering schedules, and wastage reduction protocols  ensuring your bar is always fully stocked, costs are controlled, and profit margins are protected. We maintain drought beer systems, manage cellar stock, and perform regular equipment cleaning and maintenance to ensure optimal functionality and compliance.</p>
+        <button class="learn-btn" onclick="toggleCard('card-d',this)">Learn More</button>
+      </div>
+
+      <div class="platform-card" id="card-e">
+        <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Customer Experience">
+        <div class="element-badge">Service E</div>
+        <h3>Guest Experience &amp; Loyalty</h3>
+        <p class="short-text">Personalised, attentive service that transforms first-time visitors into loyal regulars.</p>
+        <p class="more-text">Our bartenders greet every guest warmly, remember names and drink preferences, and deliver consistently attentive service from arrival to departure. We implement loyalty-building techniques  personalised recommendations, birthday recognition, regulars' programmes  that increase repeat visits and positive word-of-mouth referrals, making your venue the destination guests choose again and again.</p>
+        <button class="learn-btn" onclick="toggleCard('card-e',this)">Learn More</button>
+      </div>
+
+      <div class="platform-card" id="card-f">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=420&q=80&auto=format&fit=crop" class="platform-card-img" alt="Compliance">
+        <div class="element-badge">Service F</div>
+        <h3>Compliance &amp; Responsible Service</h3>
+        <p class="short-text">Full alcohol law compliance and responsible service protocols to protect your licence and guests.</p>
+        <p class="more-text">We implement comprehensive responsible alcohol service protocols  including guest intoxication monitoring, Challenge 25 enforcement, and licence condition compliance  protecting your venue's licence and reputation. Our team is fully trained in UK alcohol licensing legislation, food hygiene standards, and health and safety regulations, ensuring your venue operates legally, safely, and professionally at all times.</p>
+        <button class="learn-btn" onclick="toggleCard('card-f',this)">Learn More</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARKET STRIP ===================== -->
+<section class="market-strip">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-num">£59B</span>
+      <div class="stat-desc">UK hospitality industry value  one of Britain's largest employment sectors</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">5+ Yrs</span>
+      <div class="stat-desc">Combined bartending and hospitality management experience across London's top venues</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">+35%</span>
+      <div class="stat-desc">Average uplift in bar revenue achieved through expert upselling and menu design</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">★ 4.9</span>
+      <div class="stat-desc">Average guest satisfaction score across all managed venues and events</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="pricing-section" id="pricing">
+  <div class="pricing-container">
+    <div class="section-label">Service Packages</div>
+    <h2 class="section-title">World-Class Hospitality.<br>Tailored to Your Venue.</h2>
+    <div class="section-divider"></div>
+    <p class="pricing-sub">
+      Whether you need a single experienced bartender for a private event or a fully managed bar operation for your hotel  KitchenTime Group has a package that fits your ambition and budget.
+    </p>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-tag">Starter Package</div>
+        <h3>Private Events</h3>
+        <p>Perfect for private parties, corporate events, and pop-up bars requiring expert bartending and cocktail service.</p>
+        <span class="price-amount">£299</span>
+        <div class="price-unit">per event · up to 6 hours</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Professional bartender on site</li>
+          <li><span class="check">✓</span> Custom cocktail menu design</li>
+          <li><span class="check">✓</span> Full bar setup &amp; breakdown</li>
+          <li><span class="check">✓</span> Responsible service compliance</li>
+          <li><span class="check">✓</span> Guest greeting &amp; attentive service</li>
+          <li><span class="check">✓</span> Post-event stock report</li>
+        </ul>
+        <a href="#contact" class="price-btn price-btn-outline">Book Now →</a>
+      </div>
+
+      <div class="price-card featured">
+        <div class="price-tag">Professional Package</div>
+        <h3>Restaurant &amp; Bar</h3>
+        <p>For restaurants, independent bars, and boutique hotels requiring ongoing expert bar management and service excellence.</p>
+        <span class="price-amount">£1,499</span>
+        <div class="price-unit">per month · billed monthly</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Everything in Starter, plus:</li>
+          <li><span class="check">✓</span> Full daily bar operations management</li>
+          <li><span class="check">✓</span> Signature cocktail list development</li>
+          <li><span class="check">✓</span> Inventory &amp; stock control</li>
+          <li><span class="check">✓</span> Key-holder responsibilities</li>
+          <li><span class="check">✓</span> Monthly event &amp; promo planning</li>
+          <li><span class="check">✓</span> Staff training &amp; FOH coordination</li>
+        </ul>
+        <a href="#contact" class="price-btn price-btn-amber">Get Started →</a>
+      </div>
+
+      <div class="price-card">
+        <div class="price-tag">Enterprise Package</div>
+        <h3>Hotel &amp; Group Venues</h3>
+        <p>For hotel groups, large restaurants, and multi-site operators requiring full hospitality management solutions.</p>
+        <span class="price-amount">Custom</span>
+        <div class="price-unit">bespoke pricing · multi-site SLA</div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Everything in Professional, plus:</li>
+          <li><span class="check">✓</span> Multi-venue bar management</li>
+          <li><span class="check">✓</span> F&amp;B Manager coordination</li>
+          <li><span class="check">✓</span> Bespoke loyalty programme design</li>
+          <li><span class="check">✓</span> Revenue growth strategy</li>
+          <li><span class="check">✓</span> 24/7 availability for events</li>
+        </ul>
+        <a href="#contact" class="price-btn price-btn-outline">Enquire Now →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq-section" id="faq">
+  <div class="faq-container">
+    <div class="faq-header">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>What types of venues does KitchenTime Group work with?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        KitchenTime Group works with a wide range of hospitality venues across London  including independent restaurants, boutique hotels, private members clubs, corporate event spaces, and multi-site hospitality groups. Whether you operate a 20-cover neighbourhood bistro or a 300-seat hotel restaurant, our services are tailored to your specific venue, guest profile, and revenue goals. We have direct experience across Central London's vibrant hospitality scene, having worked with establishments in Greenwich, the West End, and City of London locations.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>How does KitchenTime Group increase bar revenue for my venue?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        We use a combination of proven revenue optimisation techniques: expertly designed cocktail menus that encourage premium selections, trained upselling techniques for sides, desserts, and drinks upgrades, and strategic event programming that fills seats on quieter weeknights. Our bartenders are trained to build rapport with guests  remembering preferences and making personalised recommendations that feel natural rather than pushy. Venues managed by KitchenTime Group typically see a 25–35% increase in average bar spend within the first three months of our engagement.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Are your bartenders trained in responsible alcohol service and UK licensing law?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Absolutely. All KitchenTime Group staff are fully trained in UK alcohol licensing legislation, responsible service protocols, and Challenge 25 age verification. We monitor guest intoxication levels throughout every service period and follow strict protocols for discontinuing service when necessary  protecting both your guests and your venue licence. Our team is also fully trained in health and safety regulations, food hygiene standards, and bar cleanliness requirements, ensuring your venue consistently meets or exceeds compliance standards.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Can KitchenTime Group design a completely new cocktail menu for our venue?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Yes  cocktail list development is one of our signature services. We begin with a consultation to understand your brand identity, guest profile, and existing beverage offering. Our team then designs a bespoke menu featuring original signature cocktails, seasonal specials, and carefully curated wine, beer, and spirits selections. Every drink is costed, priced, and presented in a way that maximises your margin while delighting guests. We also create non-alcoholic alternatives and pair recommendations, ensuring every guest has a memorable experience at the bar.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>What does full bar management actually include on a day-to-day basis?</h4>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Our full bar management service covers every aspect of daily bar operations. This includes opening and closing the venue (with key-holder responsibilities), setting up the bar ready for service, managing guest orders, preparing drinks across all categories, coordinating with kitchen and front-of-house teams, maintaining daily stock levels and placing replenishment orders, operating and maintaining bar equipment, hosting special events, and ensuring compliance with all health, safety, and licensing requirements. We also provide monthly performance reports covering beverage costs, revenue per cover, and guest feedback summaries.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+
+    <div class="contact-left">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Book a Consultation or<br>Discuss Your Venue</h2>
+      <div class="section-divider"></div>
+      <p>
+        Whether you manage a restaurant, hotel, private event space, or are planning a special occasion  we would love to hear from you. Contact us to arrange a free consultation, discuss your bar management needs, or enquire about our cocktail design services.
+      </p>
+      <div class="contact-info-item">
+        <div class="contact-icon">✉</div>
+        <div class="contact-info-text">
+          <strong>Email</strong>
+          <span>vinithaiereddy1999@gmail.com</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">☎</div>
+        <div class="contact-info-text">
+          <strong>Phone</strong>
+          <span>07452 766 697</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">⚑</div>
+        <div class="contact-info-text">
+          <strong>Location</strong>
+          <span>84 Romford Road, London E15 4EJ</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-icon">◈</div>
+        <div class="contact-info-text">
+          <strong>Areas Served</strong>
+          <span>Central London · Greenwich · City of London · East London · Events Nationwide</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Venue / Organisation</label>
+          <input type="text" placeholder="Restaurant, hotel, or event name">
+        </div>
+        <div class="form-group">
+          <label>I am looking for…</label>
+          <select>
+            <option value="">Select your need</option>
+            <option>Full Bar Management (ongoing)</option>
+            <option>Cocktail Menu Design</option>
+            <option>Private Event Bartending</option>
+            <option>Staff Training &amp; FOH Coordination</option>
+            <option>Inventory &amp; Stock Management</option>
+            <option>Event Hosting &amp; Promotions</option>
+            <option>Hotel / Multi-site Partnership</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell us about your venue, event, or bar management requirements  we'd love to help create something memorable…"></textarea>
+        </div>
+        <button class="form-submit" type="button" onclick="this.textContent='Enquiry Sent ✓';this.style.background='linear-gradient(135deg,#C97A1E,#9A5E12)';">Send Enquiry →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-wrap">
+        <div class="logo-icon-sm">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C9.5 3 7.5 4.8 7.5 7C7.5 8.3 8.1 9.4 9 10.1V11H15V10.1C15.9 9.4 16.5 8.3 16.5 7C16.5 4.8 14.5 3 12 3Z" fill="#120C04"/>
+            <rect x="9" y="11" width="6" height="9" rx="1" fill="#120C04"/>
+          </svg>
+        </div>
+        <span class="logo-text">KitchenTime<span> Group</span></span>
+      </div>
+      <p>
+        London's premier hospitality and bar management group  delivering expert cocktail design, full bar operations, and unforgettable guest experiences for restaurants, hotels, and private events across the capital.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#how-it-works">How We Work</a>
+      <a href="#services">Bar Management</a>
+      <a href="#services">Cocktail Design</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact">Book a Consultation</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>KitchenTime Group</span>. All rights reserved. London Hospitality Excellence.</p>
+    <p>Head Bartender &amp; Founder  <span>Vinith Aiereddy</span></p>
+  </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script>
+
+/* NAVBAR TOGGLE */
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("navMenu");
+toggle.addEventListener("click",()=>menu.classList.toggle("active"));
+document.querySelectorAll("#navMenu a").forEach(link=>{
+  link.addEventListener("click",()=>menu.classList.remove("active"));
+});
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+  anchor.addEventListener("click",function(e){
+    e.preventDefault();
+    const target=document.querySelector(this.getAttribute("href"));
+    if(target)target.scrollIntoView({behavior:"smooth"});
+  });
+});
+
+/* FAQ TOGGLE */
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains("open");
+  document.querySelectorAll(".faq-item").forEach(i=>i.classList.remove("open"));
+  if(!wasOpen)item.classList.add("open");
+}
+
+/* SERVICE CARD TOGGLE */
+function toggleCard(id,btn){
+  const card=document.getElementById(id);
+  const isOpen=card.classList.contains("open");
+  document.querySelectorAll(".platform-card").forEach(c=>{
+    c.classList.remove("open");
+    const b=c.querySelector(".learn-btn");
+    if(b)b.textContent="Learn More";
+  });
+  if(!isOpen){
+    card.classList.add("open");
+    btn.textContent="Show Less";
+  }
+}
+
+</script>
+</body>
+</html>
