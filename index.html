@@ -984,13 +984,15 @@ html{font-family:'Source Sans 3',sans-serif;}
 <section class="contact-section" id="contact">
   <div class="contact-container">
 
+    <!-- LEFT SIDE (UNCHANGED) -->
     <div class="contact-left">
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Book a Consultation or<br>Discuss Your Venue</h2>
       <div class="section-divider"></div>
       <p>
-        Whether you manage a restaurant, hotel, private event space, or are planning a special occasion  we would love to hear from you. Contact us to arrange a free consultation, discuss your bar management needs, or enquire about our cocktail design services.
+        Whether you manage a restaurant, hotel, private event space, or are planning a special occasion — we would love to hear from you.
       </p>
+
       <div class="contact-info-item">
         <div class="contact-icon">✉</div>
         <div class="contact-info-text">
@@ -998,6 +1000,7 @@ html{font-family:'Source Sans 3',sans-serif;}
           <span>vinithaiereddy1999@gmail.com</span>
         </div>
       </div>
+
       <div class="contact-info-item">
         <div class="contact-icon">☎</div>
         <div class="contact-info-text">
@@ -1005,6 +1008,7 @@ html{font-family:'Source Sans 3',sans-serif;}
           <span>07452 766 697</span>
         </div>
       </div>
+
       <div class="contact-info-item">
         <div class="contact-icon">⚑</div>
         <div class="contact-info-text">
@@ -1012,6 +1016,7 @@ html{font-family:'Source Sans 3',sans-serif;}
           <span>84 Romford Road, London E15 4EJ</span>
         </div>
       </div>
+
       <div class="contact-info-item">
         <div class="contact-icon">◈</div>
         <div class="contact-info-text">
@@ -1021,45 +1026,63 @@ html{font-family:'Source Sans 3',sans-serif;}
       </div>
     </div>
 
+    <!-- RIGHT SIDE (FIXED FORM) -->
     <div class="contact-right">
-      <div class="contact-form">
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+        <!-- 🔑 YOUR ACCESS KEY -->
+        <input type="hidden" name="access_key" value="c2dc0452-5661-4859-9789-8e43092cb86f">
+
+        <!-- OPTIONAL -->
+        <input type="hidden" name="subject" value="New Bar Service Enquiry">
+        <input type="hidden" name="from_name" value="Bar Service Website">
+
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" placeholder="Your full name">
+          <input type="text" name="name" placeholder="Your full name" required>
         </div>
+
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="your@email.com">
+          <input type="email" name="email" placeholder="your@email.com" required>
         </div>
+
         <div class="form-group">
           <label>Venue / Organisation</label>
-          <input type="text" placeholder="Restaurant, hotel, or event name">
+          <input type="text" name="organisation" placeholder="Restaurant, hotel, or event name" required>
         </div>
+
         <div class="form-group">
           <label>I am looking for…</label>
-          <select>
+          <select name="service" required>
             <option value="">Select your need</option>
             <option>Full Bar Management (ongoing)</option>
             <option>Cocktail Menu Design</option>
             <option>Private Event Bartending</option>
-            <option>Staff Training &amp; FOH Coordination</option>
-            <option>Inventory &amp; Stock Management</option>
-            <option>Event Hosting &amp; Promotions</option>
+            <option>Staff Training & FOH Coordination</option>
+            <option>Inventory & Stock Management</option>
+            <option>Event Hosting & Promotions</option>
             <option>Hotel / Multi-site Partnership</option>
             <option>General Enquiry</option>
           </select>
         </div>
+
         <div class="form-group">
           <label>Message</label>
-          <textarea placeholder="Tell us about your venue, event, or bar management requirements  we'd love to help create something memorable…"></textarea>
+          <textarea name="message"
+            placeholder="Tell us about your venue, event, or bar management requirements — we'd love to help create something memorable…"
+            required></textarea>
         </div>
-        <button class="form-submit" type="button" onclick="this.textContent='Enquiry Sent ✓';this.style.background='linear-gradient(135deg,#C97A1E,#9A5E12)';">Send Enquiry →</button>
-      </div>
+
+        <button class="form-submit" type="submit">
+          Send Enquiry →
+        </button>
+
+      </form>
     </div>
 
   </div>
 </section>
-
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
   <div class="footer-grid">
